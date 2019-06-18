@@ -1,4 +1,7 @@
 import dash
+
+# these two constitute the visual components of dash 
+# and provide classes for each one
 import dash_core_components as dcc 
 import dash_html_components as html 
 
@@ -11,7 +14,14 @@ colors = {
     'text': '#7FDBFF'
 }
 
+# Dash is composed of two parts. 
+# the first part is the "layout" of the app and it describes 
+# what the application looks like.
+
 app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
+   # equivelant to <h1>Hello Dash</h1> in html5
+   # dash_html_components library or html here contains 
+   # a class for every html tag as well as their keyword arguments 
     html.H1(
         children='Hello Dash',
         style={
@@ -24,6 +34,8 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         'textAlign': 'center',
         'color': colors['text']
     }),
+# dcc describes higher-level components that are interactive 
+# using js, html and css through react.js
 
     dcc.Graph(
         id='example-graph-2',
@@ -43,5 +55,6 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
     )
 ])
 
+# to turn of "hot-reloading" app.run_server(dev_tools_hot_reload=False)
 if __name__ == '__main__':
     app.run_server(debug=True)

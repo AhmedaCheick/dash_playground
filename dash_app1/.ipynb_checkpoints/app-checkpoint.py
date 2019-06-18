@@ -1,7 +1,4 @@
 import dash
-
-# these two constitute the visual components of dash 
-# and provide classes for each one
 import dash_core_components as dcc 
 import dash_html_components as html 
 
@@ -13,10 +10,6 @@ colors = {
     'background': '#111111',
     'text': '#7FDBFF'
 }
-
-# Dash is composed of two parts. 
-# the first part is the "layout" of the app and it describes 
-# what the application looks like.
 
 app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
     html.H1(
